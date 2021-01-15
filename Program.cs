@@ -6,8 +6,10 @@ using CsvHelper;
 
 namespace JurassicPark
 {
-    class Dinosaurs
+    class DinosaurProperties
     {
+        var new <list> dinosaurs();
+
         public string Name { get; set }
         public string DietType { get; set }
         public int WhenAcquired { get; set }
@@ -122,7 +124,6 @@ namespace JurassicPark
                     var answer = Console.ReadLine();
                 }
             }
-            return == true;
             if (choice == "Remove")
             {
                 Console.Write("What is the dino's name? Answer: ");
@@ -152,10 +153,3 @@ namespace JurassicPark
                 //when user has quit 
                 //Time to write the file
                 //make filewriting stream
-                var fileWriter = new StreamWriter("dinos.csv");
-                var csvWriter = new CsvWriter(fileWriter, CultureInfo.InvariantCulture);
-                //numbers could be Dinos and / or features
-                //PROBABLY RESPONSES TO ADD/CHANGE FEATURES OR RESPOND TO MENU 
-                csvWriter.WriteRecords(dinos);
-                fileWriter.Close();
-            }
