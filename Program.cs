@@ -58,7 +58,6 @@ namespace JurassicPark
     }
     static void Main(string[] args)
     {
-        Greeting();
         var dinosaurs = new List<Dinosaur>()
               new Dinosaur
               {
@@ -85,71 +84,78 @@ namespace JurassicPark
                   EnclosureNumber = 132
               }
 
-
-       Menu()
-
-                var choice = Console.ReadLine().ToUpper().Trim();
-        bool hasQuit = false;
-        while (hasQuit == false)
-            var choice = Console.ReadLine();
-        if (choice == "Quit")
+        Greeting()
+        Menu()
+        var choice = Console.ReadLine().ToUpper().Trim();
+        var choice = Console.ReadLine();
+        if (choice = !"Quit")
         {
             hasQuit = true;
             Console.WriteLine("-----Adíos----");
-        }
         else if (choice == "Add")
-        {
-            Console.Write("What is the dino's name? Answer: ");
-            var name = Console.ReadLine();
-            Console.Write("What is the dino's diet? carnivore/herbivore. Answer: ");
-            var diet = Console.ReadLine();
-            Console.Write("what is the weight of the dino in lbs? Answer: ");
-            var weight = int.Parse(Console.ReadLine());
-            Console.Write("What is the enclosure number you wish to put the dino in? Answer: ");
-            var enclosure = int.Parse(Console.ReadLine());
-            var dino = new Dinosaur()
             {
-                Name = name,
-                DietType = diet,
-                Weight = weight,
-                EnclosureNumber = enclosure,
-                WhenAcquired = DateTime.Now
-            };
-            dinosaurs.Add(dino);
-        }
-        //////Console.Write(GreetingandMenu);
-        {
-
+                Console.Write("What is the dino's name? Answer: ");
+                var name = Console.ReadLine();
+                Console.Write("What is the dino's diet? carnivore/herbivore. Answer: ");
+                var diet = Console.ReadLine();
+                Console.Write("what is the weight of the dino in lbs? Answer: ");
+                var weight = int.Parse(Console.ReadLine());
+                Console.Write("What is the enclosure number you wish to put the dino in? Answer: ");
+                var enclosure = int.Parse(Console.ReadLine());
+                var dino = new Dinosaur()
+                {
+                    Name = name,
+                    DietType = diet,
+                    Weight = weight,
+                    EnclosureNumber = enclosure,
+                    WhenAcquired = DateTime.Now
+                };
+                dinosaurs.Add(dino);
+            }
 
             if (choice == "VIEW")
             {
                 foreach (var dino in Dinosaurs)
                 {
-                    Console.WriteLine($"{Dinosaurs} where.DietType == Herbivore");
+                    Console.WriteLine(dinosaur.Description());
+                    Console.WriteLine();
+                    var answer = Console.ReadLine();
+                }
+            }
+            return == true;
+            if (choice == "Remove")
+            {
+                Console.Write("What is the dino's name? Answer: ");
+                var dinoName = Console.ReadLine();
+                var foundDino = dinosaurs.FirstOrDefault(Pet => Pet.Name == dinoName);
+                if (foundDino != null)
+                {
+                    Console.WriteLine(foundDino.Description());
+                    Console.WriteLine();
+                    Console.WriteLine($"Are you sure you want to remove this Dinosaur from the datebase? y|n");
+                    var response = Console.ReadLine();
+                    if (response == "y")
+                    {
+                        dinosaurs.Remove(foundDino);
+                        Console.WriteLine();
+                        Console.WriteLine($"{foundDino.Name} has been successfully removed from the park's database");
+                        Console.WriteLine();
+                        Console.Write("Is there is anything else you need to do? press y for yes or type exit to exit: ");
+                        var Choice = Console.ReadLine();
+                        if (choice != "exit")
+                        {
+                            hasQuit = true;
+                        }
+                    }
                 }
 
+                //when user has quit 
+                //Time to write the file
+                //make filewriting stream
+                var fileWriter = new StreamWriter("dinos.csv");
+                var csvWriter = new CsvWriter(fileWriter, CultureInfo.InvariantCulture);
+                //numbers could be Dinos and / or features
+                //PROBABLY RESPONSES TO ADD/CHANGE FEATURES OR RESPOND TO MENU 
+                csvWriter.WriteRecords(dinos);
+                fileWriter.Close();
             }
-        }
-
-
-
-
-
-
-
-
-
-
-
-    }
-    //when user has quit 
-    //Time to write the file
-    //make filewriting stream
-    var fileWriter = new StreamWriter("dinos.csv");
-    var csvWriter = new CsvWriter(fileWriter, CultureInfo.InvariantCulture);
-    //numbers could be Dinos and / or features
-    //PROBABLY RESPONSES TO ADD/CHANGE FEATURES OR RESPOND TO MENU 
-    csvWriter.WriteRecords(dinos);
-            fileWriter.Close();
-        }
-    }
