@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using CsvHelper;
 
-namespace JurasicPark
+namespace JurassicPark
 {
     class Dinosaurs
     {
@@ -36,7 +36,9 @@ namespace JurasicPark
     }
     static void Greeting()
     {
-        Console.Clear();
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine();
         Console.WriteLine("\nWelcome to Luke's Jurasic Park\n");
         Console.WriteLine("\n First lets get your first name or favorite alias\n");
         var alias = Console.ReadLine();
@@ -84,7 +86,7 @@ namespace JurasicPark
               }
 
 
-                Menu()
+       Menu()
 
                 var choice = Console.ReadLine().ToUpper().Trim();
         bool hasQuit = false;
