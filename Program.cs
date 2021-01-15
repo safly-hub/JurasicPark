@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 namespace JurassicPrison
 {
-    class DinosaurProperties
+    class DinosaursProperties
     {
         var new <list> dinosaurs();
+
 
         public string Name { get; set }
         public string DietType { get; set }
@@ -35,13 +36,9 @@ namespace JurassicPrison
     }
     static void Greeting()
     {
-        Console.WriteLine();
-        Console.WriteLine();
-        Console.WriteLine();
         Console.WriteLine("\n ========== Welcome to Luke's Jurassic Prison ========== \n");
         Console.WriteLine("\n First lets get your first name or favorite alias:  \n");
-        var alias = Console.ReadLine();
-        Console.WriteLine($"\n Welcome! {alias}\n");
+
     }
     static Dinosaur DinoSearch(List<Dinosaur> dinosaurs)
     {
@@ -57,6 +54,10 @@ namespace JurassicPrison
     }
     static void Main(string[] args)
     {
+        Greeting()
+
+        var alias = Console.ReadLine();
+        Console.WriteLine($"\n Welcome! {alias}\n");
         var dinosaurs = new List<Dinosaur>()
               new Dinosaur
               {
