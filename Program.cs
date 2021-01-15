@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using CsvHelper;
 
-namespace JurassicPark
+namespace JurassicPrison
 {
     class DinosaurProperties
     {
@@ -12,7 +9,7 @@ namespace JurassicPark
 
         public string Name { get; set }
         public string DietType { get; set }
-        public int WhenAcquired { get; set }
+        public DateTime WhenCaptured { get; set }
         public string WeightinLBs { get; set; }
         public int EnclosureNumber { get; set; }
 
@@ -41,8 +38,8 @@ namespace JurassicPark
         Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine("\nWelcome to Luke's Jurasic Park\n");
-        Console.WriteLine("\n First lets get your first name or favorite alias\n");
+        Console.WriteLine("\n ========== Welcome to Luke's Jurassic Prison ========== \n");
+        Console.WriteLine("\n First lets get your first name or favorite alias:  \n");
         var alias = Console.ReadLine();
         Console.WriteLine($"\n Welcome! {alias}\n");
     }
